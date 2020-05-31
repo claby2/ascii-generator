@@ -30,5 +30,5 @@ pip install Pillow
 
 ## Usage <a name = "usage"></a>
 
-1. Assign path of image in `FILE` variable in `source.py`
-2. Run: `python source.py`
+1. Run: `python source.py --file image.png`
+    - Optionally, you can specify the height and width of the ASCII art (both defaults to 40 if not specified): eg. `python source.py --file image.png --width 100 --height 50`
