@@ -1,9 +1,16 @@
+import optparse
 from PIL import Image
 from numpy import array
 
-FILE = '' # Insert path to image
+parser = optparse.OptionParser()
 
-size = (115, 115) # Size of image 
+parser.add_option('--file', action = "store", dest = "file", help = "file path") # Set file path to image
+parser.add_option('--height', action = "store", dest = "height", help = "height", default = 40) # Set height of image from parser, defaults to 40
+parser.add_option('--width', action = "store", dest = "width", help = "width", default = 40) # Set width of image from parser, defaults to 40
+options, args = parser.parse_args()
+FILE = options.file # Insert path to image
+
+size = (int(options.height), int(options.width)) # Size of image 
 
 matrix = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
 
