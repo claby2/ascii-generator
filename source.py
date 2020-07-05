@@ -14,7 +14,7 @@ size = (int(options.height), int(options.width)) # Size of image
 
 matrix = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
 
-factor = 255 / len(matrix)
+factor = 255 / (len(matrix) - 1)
 
 img = Image.open(FILE)
 img = img.resize(size)
@@ -23,7 +23,7 @@ averaged_arr = [] # Stores averaged values of each pixel
 ascii_arr = [] # Stores ASCII art
 
 def average(pixel):
-    return (pixel[0] + pixel[1] + pixel[2]) / 3
+    return int((int(pixel[0]) + int(pixel[1]) + int(pixel[2])) / 3)
 
 for i in range(len(arr)):
     for j in range(len(arr[0])):
